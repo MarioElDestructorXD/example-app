@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+	<table style="border: 1px solid black;">
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>Nombre</th>
+				<th>Descripción</th>
+				<th>Salario</th>
+				<th>Buen Salario / Mal Salario</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="vacante : ${vacantes}">
+				<td >[[${vacante.id}]]</td>
+				<td>[[${vacante.nombre}]]</td>
+				<td>[[${vacante.descripcion}]]</td>
+				<td>[[${vacante.salario}]]</td>
+				<td th:text="${vacante.salario > 1000} ? 'Buen Salario' : 'Mal Salario'" />
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>
